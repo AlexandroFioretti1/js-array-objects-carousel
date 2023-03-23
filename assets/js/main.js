@@ -17,7 +17,7 @@ Milestone 2:
 Aggiungere il ciclo infinito del carosello. Ovvero se la miniatura attiva è la prima e l'utente clicca la freccia verso destra, la miniatura che deve attivarsi sarà l'ultima e viceversa per l'ultima miniatura se l'utente clicca la freccia verso sinistra.
 BONUS 1:
 
-Aggiungere le thumbnails (sottoforma di miniatura) ed al click attivare l’immagine corrispondente.
+Aggiungere le nails (sottoforma di miniatura) ed al click attivare l’immagine corrispondente.
 BONUS 2:
 
 Aggiungere funzionalità di autoplay: dopo un certo periodo di tempo (3 secondi) l’immagine attiva dovrà cambiare alla successiva.
@@ -25,9 +25,8 @@ Aggiungere funzionalità di autoplay: dopo un certo periodo di tempo (3 secondi)
 BONUS 3:
 Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 Buon lavoro e buon divertimento. Confermate lettura come al solito.
-
-/*****************************************************************************************************************/
-/*****************************************************************************************************************/
+/***********************************************************************************************************
+************************************************************************************************************/
 const giochi = [
   {
     /* spiderman */
@@ -68,21 +67,48 @@ const giochi = [
 /* creo un console.log di tutti i Film inseriti all'interno dell'array */
 console.log(giochi);
 
-/*prendo il "div" titolo all'interno della Dom per aggiungerlo in html tramite js */
-const titolo = document.getElementById("titolo");
-
-/*prendo il "div" "carosello" all'interno della Dom per aggiungerlo in html tramite js */
-const carosello = document.getElementById("carosello");
-
-/*prendo il "div" testo della descrizione all'interno della Dom per aggiungerlo in html tramite js */
-const testo = document.getElementById("testo");
+// Seleziono col dalla DOM
+const colEL = document.querySelector(".col");
 
 /* credo un ciclo per ogni gioco inserito nell'array per il titolo-img-testo */
 giochi.forEach((gioco) => {
-  titolo.innerHTML += `<h2>${gioco.titolo}</h2>`;
-  carosello.innerHTML += `<img class="img-fluid" src="${gioco.imgUrl}" alt="">`;
-  testo.innerHTML += `<h3>${gioco.descrizione}</h3>`;
+  colEL.innerHTML += `<div class="singleMovie"><h2 class="nome">${gioco.titolo}</h2><img class="img-fluid copertina" src="${gioco.imgUrl}" alt="">
+   <h3 class="desc">${gioco.descrizione}</h3> </div>`;
 });
-console.log(titolo)
-console.log(carosello)
-console.log(testo)
+
+const totalFilm = document.querySelectorAll(".singleMovie");
+console.log(totalFilm);
+
+// assegno il valore di 0 ariabile a per modificare l'elemento visualizzato
+let indexArray = 0;
+
+// Seleziono il pulsante next e previous
+const next = document.querySelector(".next_arrow");
+const prev = document.querySelector(".prev_arrow");
+
+// Aggiungo la classe active
+totalFilm[indexArray].classList.add("active");
+
+// Event Listener per il pulsante NEXT
+next.addEventListener("click", function () {
+  console.log("Clicked on the Next Button");
+
+  // rimuovo la classe "active"
+  totalFilm[indexArray].classList.remove("active");
+  indexArray++;
+  if (indexArray >= totalFilm.length) {
+    indexArray = 0;
+  }
+  totalFilm[indexArray].classList.add("active");
+});
+
+// Event Listener per il pulsante PREV
+prev.addEventListener("click", function () {
+  console.log("Clicked on the Previous Button");
+  totalFilm[indexArray].classList.remove("active");
+  indexArray--;
+  if (indexArray < 0) {
+    indexArray = totalFilm.length - 1;
+  }
+  totalFilm[indexArray].classList.add("active");
+});

@@ -4,11 +4,41 @@
     box-sizing: border-box;
 }
 
-/* region debug */
+img {
+    object-fit: cover;
+    height: 300px;
+    width: 300px;
+}
 
-/* #End region debug */
+header{
+    background-color: grey;
+}
 
+.singleMovie:not(.active) {
+    display: none;
+}
 
+/* button */
+.prev_arrow {
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-size: 3em;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    bottom: 50%;
+}
 
-  
-  
+.next_arrow {
+    background-color: transparent;
+    border: none;
+    font-size: 3em;
+    cursor: pointer;
+    color: black;
+    position: absolute;
+    right: 0;
+    bottom: 50%;
+}
+
+/* #End button */
