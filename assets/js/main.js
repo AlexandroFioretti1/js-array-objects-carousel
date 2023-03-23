@@ -6,8 +6,8 @@ titolo.
 descrizione.
 Creare un carosello come nella foto allegata.
 
-Milestone 0:
-Come nel primo carosello realizzato, focalizziamoci prima sulla creazione del markup statico: costruiamo il container e inseriamo l'immagine grande in modo da poter stilare lo slider.
+Milestone 0: 
+creazione del markup statico: costruiamo il container e inseriamo l'immagine grande in modo da poter stilare lo slider.
 
 Milestone 1:
 Ora rimuoviamo i contenuti statici e usiamo l’array di oggetti letterali per popolare dinamicamente il carosello.
@@ -21,32 +21,49 @@ Aggiungere le thumbnails (sottoforma di miniatura) ed al click attivare l’imma
 BONUS 2:
 
 Aggiungere funzionalità di autoplay: dopo un certo periodo di tempo (3 secondi) l’immagine attiva dovrà cambiare alla successiva.
-BONUS 3:
 
+BONUS 3:
 Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 Buon lavoro e buon divertimento. Confermate lettura come al solito.
 
-const images = [
-    {
-        image: 'img/01.webp',
-        title: 'Marvel\'s Spiderman Miles Morale',
-        text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
-    }, {
-        image: 'img/02.webp',
-        title: 'Ratchet & Clank: Rift Apart',
-        text: 'Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.',
-    }, {
-        image: 'img/03.webp',
-        title: 'Fortnite',
-        text: "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.",
-    }, {
-        image: 'img/04.webp',
-        title: 'Stray',
-        text: 'Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city',
-    }, {
-        image: 'img/05.webp',
-        title: "Marvel's Avengers",
-        text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
-    }
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+const films = [
+  {
+    /* spiderman */
+    imgUrl: "./assets/img/01.webp",
+    titolo: "Marvel's Spiderman Miles Morale",
+    descrizione:
+      "Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.",
+  },
+  {
+    /* ratchet & Clank */
+    imgUrl: "./assets/img/02.webp",
+    titolo: "Ratchet & Clank: Rift Apart",
+    descrizione:
+      "Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.",
+  },
+  {
+    /* Fortnite */
+    imgUrl: "./assets/img/03.webp",
+    titolo: "Fortnite",
+    descrizione:
+      "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.",
+  },
+  {
+    /* Stray */
+    imgUrl: "./assets/img/04.webp",
+    titolo: "Stray",
+    descrizione:
+      "Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city.",
+  },
+  {
+    /* Marvel's Avengers */
+    imgUrl: "./assets/img/05.webp",
+    titolo: "Marvel's Avengers",
+    descrizione:
+      "Marvel's Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.",
+  },
 ];
- */
+/* creo un console.log di tutti i Film inseriti all'interno dell'array */
+console.log(films);
