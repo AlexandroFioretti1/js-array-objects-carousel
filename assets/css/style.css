@@ -3,3 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+
+/* region debug */
+
+img{
+    width: 400px;
+    height: 400px;
+}
+/* #End region debug */
