@@ -12,8 +12,8 @@ creazione del markup statico: costruiamo il container e inseriamo l'immagine gra
 Milestone 1:
 Ora rimuoviamo i contenuti statici e usiamo l’array di oggetti letterali per popolare dinamicamente il carosello.
 Al click dell'utente sulle frecce verso sinistra o destra, l'immagine attiva diventerà visibile e dovremo aggiungervi titolo e testo.
-Milestone 2:
 
+Milestone 2:
 Aggiungere il ciclo infinito del carosello. Ovvero se la miniatura attiva è la prima e l'utente clicca la freccia verso destra, la miniatura che deve attivarsi sarà l'ultima e viceversa per l'ultima miniatura se l'utente clicca la freccia verso sinistra.
 BONUS 1:
 
@@ -28,42 +28,61 @@ Buon lavoro e buon divertimento. Confermate lettura come al solito.
 
 /*****************************************************************************************************************/
 /*****************************************************************************************************************/
-const films = [
+const giochi = [
   {
     /* spiderman */
     imgUrl: "./assets/img/01.webp",
     titolo: "Marvel's Spiderman Miles Morale",
     descrizione:
-      "Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.",
+      "Vivi l'ascesa di Miles Morales mentre il nuovo eroe padroneggia nuovi poteri incredibili ed esplosivi per diventare il suo stesso Spider-Man",
   },
   {
     /* ratchet & Clank */
     imgUrl: "./assets/img/02.webp",
     titolo: "Ratchet & Clank: Rift Apart",
     descrizione:
-      "Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.",
+      "Fai un salto dimensionale con Ratchet e Clank mentre affrontano un malvagio imperatore di un'altra realtà.",
   },
   {
     /* Fortnite */
     imgUrl: "./assets/img/03.webp",
     titolo: "Fortnite",
     descrizione:
-      "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.",
+      "Raduna tutti i tuoi amici e lanciati in Epic Games Fortnite, un enorme faccia a faccia con 100 giocatori che combina saccheggio, creazione, sparatorie e caos",
   },
   {
     /* Stray */
     imgUrl: "./assets/img/04.webp",
     titolo: "Stray",
     descrizione:
-      "Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city.",
+      "Perso, ferito e solo, un gatto randagio deve districare un antico mistero per sfuggire a una città dimenticata da tempo.",
   },
   {
     /* Marvel's Avengers */
     imgUrl: "./assets/img/05.webp",
     titolo: "Marvel's Avengers",
     descrizione:
-      "Marvel's Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.",
+      "Marvel's Avengers è un epico gioco di azione e avventura in terza persona che combina una storia cinematografica originale con un gameplay per giocatore singolo e cooperativo.",
   },
 ];
 /* creo un console.log di tutti i Film inseriti all'interno dell'array */
-console.log(films);
+console.log(giochi);
+
+/*prendo il "div" titolo all'interno della Dom per aggiungerlo in html tramite js */
+const titolo = document.getElementById("titolo");
+
+/*prendo il "div" "carosello" all'interno della Dom per aggiungerlo in html tramite js */
+const carosello = document.getElementById("carosello");
+
+/*prendo il "div" testo della descrizione all'interno della Dom per aggiungerlo in html tramite js */
+const testo = document.getElementById("testo");
+
+/* credo un ciclo per ogni gioco inserito nell'array per il titolo-img-testo */
+giochi.forEach((gioco) => {
+  titolo.innerHTML += `<h2>${gioco.titolo}</h2>`;
+  carosello.innerHTML += `<img class="img-fluid" src="${gioco.imgUrl}" alt="">`;
+  testo.innerHTML += `<h3>${gioco.descrizione}</h3>`;
+});
+console.log(titolo)
+console.log(carosello)
+console.log(testo)
